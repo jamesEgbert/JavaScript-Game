@@ -1,4 +1,12 @@
 // JavaScript Document
-var main ();
-
+var main () {
+ bool playerVictory = false
+ bool monster
+ var battling = true;
+ while battling == true () {
+  
+  if health1 == 0; || health2 == 0; () {
+  
+  }
+ }
 };
