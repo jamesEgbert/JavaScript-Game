@@ -1,1 +1,5 @@
-
+bool battling;
+char health1;
+char health2
+bool playerVictory
+bool monsterVictory
