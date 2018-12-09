@@ -1,12 +1,74 @@
 // JavaScript Document
+var monsterFlee
+var userFlee
+// user input function
+var action() {
+    var turn = "";
+    var turn = prompt("Its your turn buddy!").toLowerCase;
+    return turn;
+};
+
+// the monsters turn
+var monsterAction() {
+    var monsterTurn =  "";
+    var monsterTurn = cpu("attack", "defend", "flee").toLowerCase;
+}
+
+// start of the main object, where most of the code belongs
 var main () {
- bool playerVictory = false
- bool monster
- var battling = true;
- while battling == true () {
-  
-  if health1 == 0; || health2 == 0; () {
-  
-  }
- }
+    var userHealth = 20;
+    var monsterHealth = 20;
+    var playerVictory = false;
+    var battling = true;
+    while battling == true() {
+        action();
+        monsterTurn(); 
+        if action() == "attack" {
+            if monsterTurn == "defend"() {
+                console.log("The user used attack, but the monster defended, so no damage taken!");
+            }
+            if monsterTurn == "attack"() {
+                console.log("The user used attack, and the monster takes 5 damage!");
+            }
+        }
+        if turn == "defend"() {
+            if monsterTurn == "attack"() {
+                console.log("The user defends, and the monster attacks. No damage is taken!");
+            }
+            if monsterTurn == "defend"() {
+                console.log("The user and monster defend, you both look stupid.");
+            }
+            if monsterTurn == "flee"() {
+                if userFlee < monsterFlee() {
+                    console.log("The monster flees and does so successfully!");
+                    battling = false;
+                }
+                if userFlee >= monsterFlee() {
+                    console.log("The monster tries to flee, but it does so unsecesfully!");
+                }
+            }
+        }
+        if turn == "flee"() {
+            if userFlee >= monsterFlee() {
+                console.log("The user sucessfully escpaes!");
+                battling = false;
+            }
+            if userFlee < monsterFlee() {
+                console.log("The user isn't fast enough to escape!");
+                if monsterTurn == "attack"() {
+                    console.log("The user tries to flee, but isn't fast enought, and the monster attacks. -5 health");
+                }
+                if monsterTurn == "defend"() {
+                    console.log("The user tries to flee, but isn't fast enough, the monster uses flee");
+                }
+                if monsterTurn == "flee"() {
+                    console.log("The user tries to flee, but isn't fast enought, luckily the monster flees and escapes successfully. So uh good job?");
+                    battling = false;
+                }
+            }
+        }
+    }
+    var continue = "";
+    var continue = prompt("Type any button to continue.");
+    }
 };
