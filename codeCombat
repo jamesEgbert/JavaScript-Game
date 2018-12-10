@@ -21,8 +21,11 @@ function main () {
     var playerVictory = false;
     var battling = true;
     while (battling == true) {
+    //The loop of life is above me :O
         action();
+	//Ask the user what they want to do
         monsterTurn(); 
+	//Random number of what the monster wants to do
         if (turn == "attack") {
             if (monsterTurn == "defend") {
                 console.log("The user used attack, but the monster defended, so no damage taken!");
@@ -32,6 +35,7 @@ function main () {
                 console.log("The user used attack, and the monster takes 5 damage!");
             }
         }
+	//Case scenarios in which the user uses attack
         if (turn == "defend" {
             if (monsterTurn == "attack") {
                 console.log("The user defends, and the monster attacks. No damage is taken!");
@@ -49,6 +53,7 @@ function main () {
                 }
             }
         }
+	//Another case scenario in which the user uses defend
         if (turn == "flee") {
             if (speed >= monsterFlee) {
                 console.log("The user sucessfully escpaes!");
@@ -68,8 +73,10 @@ function main () {
                 }
             }
         }
+	//You might have been guessing it here it is the final case scenario in which the user uses flee :O
     }
     var continue = "";
     var continue = prompt("Type any button to continue.");
+    //So the user can seperate turns
     }
 };
