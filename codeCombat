@@ -33,29 +33,12 @@ var dexMonster = {
 	def: 1,
 	dex: 10,
 };
-function monsterGen () {
-			var mGen = Math.floor((Math.random() *3) +1);
-		}
-function myFunction() {
-					document.getElementById("demo") = "YOU CLICKED ME!";
-//				while (continu == "") {
-//					continu = prompt("type any key to continue!");
-			}
 console.log("greetings");
-		var userInput;
-		var game = "true";
-		var textOutput;
-		var monsterFlee;
-		var userFlee;
-		var textOutput;
-		var continu;
 		var mom;
 		var turn;
 			console.log("vav");
 			function action () {
-				turn = prompt("It's your turn, type attack, defend, or flee!");
-				speed = Math.floor((Math.random() *10) +1);
-				console.log(turn);
+				turn = document.getElementById("turn").innerHTML;
 			}
 				var dad = turn;
 			//asking the user what they want to do
@@ -63,10 +46,9 @@ console.log("greetings");
 			function monsterAction() {
 				mom =  "";
 				mom = Math.floor((Math.random() *3) + 1);
-				monsterFlee = Math.floor((Math.random() *10) +1);
-				console.log (mom);
-				console.log("Monster Speed " + monsterFlee);
-				console.log("user flee " + speed);
+				console.log(mom);
+				console.log("Monster Speed " + monster.dex);
+				console.log("user flee " + hero.dex);
 				return mom;
 			}
 			var monsterTurn = mom;
@@ -80,23 +62,33 @@ console.log("greetings");
 //		}
 		// start of the main object, where most of the code belongs
 			console.log("smile");
-			main();
 			//I want to actually run the main function
 			function main () {
 			console.log("Hello");
-			var battling = true;
+			var battling = true; {
 			//battle loop
-			while (battling == true) {
+//			while (battling == true) {
 				action();
-				monsterAction(); 
+				monsterAction();
+				console.log("the turn is " + dad);
 				if (dad == "attack") {
 					console.log("attack sucess");
 					if (mom == 1) {
 						document.write("The user used attack, but the monster defended, so no damage taken!");
-						
 					}
 					if (mom == 2) {
 						document.write("The user used attack, and the monster takes 5 damage!");
+						monster.hp = monster.hp - 5;
+					}
+					if (mom == 3) {
+						if (hero.dex >= monster.dex) {
+							document.write("The user attacks the monster -5 hp. The monster tries to flee unsuccesfully");
+							monster.hp = monster.hp - 5;
+						}
+						else {
+							document.write("The user attacks the monster but the monster is fast enough to run away");
+							battling = false;
+						}
 					}
 				}
 				if (dad == "defend") {
@@ -107,17 +99,17 @@ console.log("greetings");
 						document.write("The user and monster defend, you both look stupid.");
 					}
 					if (mom == "flee") {
-						if (userFlee < monsterFlee) {
+						if (hero.dex < monster.dex) {
 							document.write("The monster flees and does so successfully!");
 							battling = false;
 						}
-						if (speed >= monsterFlee) {
+						if (hero.dex >= monster.dex) {
 							document.write("The monster tries to flee, but it does so unsecesfully!");
 						}
 					}
 				}
 				if (dad == "flee") {
-					if (speed >= monsterFlee) {
+					if (hero.dex >= monster.dex) {
 						document.write("The user sucessfully escpaes!");
 						battling = false;
 					}
@@ -125,9 +117,10 @@ console.log("greetings");
 						document.write("The user isn't fast enough to escape!");
 						if (mom == "attack") {
 							document.write("The user tries to flee, but isn't fast enought, and the monster attacks. -5 health");
+							hero.hp = hero.hp - 5;
 						}
 						if (mom == "defend") {
-							document.write("The user tries to flee, but isn't fast enough, the monster uses flee");
+							document.write("The user tries to flee, but isn't fast enough, and the monster uses defend");
 						}
 						if (mom == "flee") {
 							document.write("The user tries to flee, but isn't fast enought, luckily the monster flees and escapes successfully. So uh good job?");
@@ -136,7 +129,11 @@ console.log("greetings");
 					}
 				}
 				console.log("tree");
-//				while (continu == "") {
-//					continu = prompt("type any key to continue!");
+////				while (continu == "") {
+////					continu = prompt("type any key to continue!");
+				if (hero.hp <= 0) {
+					document.write("You have died");
+					battling = false;
+				}
 			}
 		}
