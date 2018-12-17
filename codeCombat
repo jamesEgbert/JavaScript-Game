@@ -1,82 +1,142 @@
-// JavaScript Document
-var monsterFlee;
-var userFlee;
-// user input function
-function action() {
-    var turn = "";
-    var turn = prompt("Its your turn buddy!").toLowerCase;
-    return turn;
-}
-
-// the monsters turn
-function monsterAction() {
-    var monsterTurn =  "";
-    var monsterTurn = cpu("attack", "defend", "flee").toLowerCase;
-}
-
-// start of the main object, where most of the code belongs
-function main () {
-    var userHealth = 20;
-    var monsterHealth = 20;
-    var playerVictory = false;
-    var battling = true;
-    while (battling == true) {
-    //The loop of life is above me :O
-        action();
-	//Ask the user what they want to do
-        monsterTurn(); 
-	//Random number of what the monster wants to do
-        if (turn == "attack") {
-            if (monsterTurn == "defend") {
-                console.log("The user used attack, but the monster defended, so no damage taken!");
-				heatlh
-            }
-            if (monsterTurn == "attack") {
-                console.log("The user used attack, and the monster takes 5 damage!");
-            }
-        }
-	//Case scenarios in which the user uses attack
-        if (turn == "defend" {
-            if (monsterTurn == "attack") {
-                console.log("The user defends, and the monster attacks. No damage is taken!");
-            }
-            if (monsterTurn == "defend") {
-                console.log("The user and monster defend, you both look stupid.");
-            }
-            if (monsterTurn == "flee") {
-                if (userFlee < monsterFlee) {
-                    console.log("The monster flees and does so successfully!");
-                    battling = false;
-                }
-                if (speed >= monsterFlee) {
-                    console.log("The monster tries to flee, but it does so unsecesfully!");
-                }
-            }
-        }
-	//Another case scenario in which the user uses defend
-        if (turn == "flee") {
-            if (speed >= monsterFlee) {
-                console.log("The user sucessfully escpaes!");
-                battling = false;
-            }
-            if (speed < monsterFlee) {
-                console.log("The user isn't fast enough to escape!");
-                if (monsterTurn == "attack") {
-                    console.log("The user tries to flee, but isn't fast enought, and the monster attacks. -5 health");
-                }
-                if (monsterTurn == "defend") {
-                    console.log("The user tries to flee, but isn't fast enough, the monster uses flee");
-                }
-                if (monsterTurn == "flee") {
-                    console.log("The user tries to flee, but isn't fast enought, luckily the monster flees and escapes successfully. So uh good job?");
-                    battling = false;
-                }
-            }
-        }
-	//You might have been guessing it here it is the final case scenario in which the user uses flee :O
-    }
-    var continue = "";
-    var continue = prompt("Type any button to continue.");
-    //So the user can seperate turns
-    }
+var hero = {
+	hp: 10,
+	speed: 256, // movement in pixels per second
+	str: 3,
+	def: 3,
+	dex: 3, 
 };
+
+var monster = {
+	hp: 10,
+	str: 1,
+	def: 1,
+	dex: 1,
+};
+
+var strMonster = {
+	hp: 10,
+	str: 3,
+	def: 1,
+	dex: 2,
+};
+
+var defMonster = {
+	hp: 10,
+	str: 1,
+	def: 3,
+	dex: 1,
+};
+
+var dexMonster = {
+	hp: 10,
+	str: 2,
+	def: 1,
+	dex: 10,
+};
+function monsterGen () {
+			var mGen = Math.floor((Math.random() *3) +1);
+		}
+function myFunction() {
+					document.getElementById("demo") = "YOU CLICKED ME!";
+//				while (continu == "") {
+//					continu = prompt("type any key to continue!");
+			}
+console.log("greetings");
+		var userInput;
+		var game = "true";
+		var textOutput;
+		var monsterFlee;
+		var userFlee;
+		var textOutput;
+		var continu;
+		var mom;
+		var turn;
+			console.log("vav");
+			function action () {
+				turn = prompt("It's your turn, type attack, defend, or flee!");
+				speed = Math.floor((Math.random() *10) +1);
+				console.log(turn);
+			}
+				var dad = turn;
+			//asking the user what they want to do
+			console.log("vav2");
+			function monsterAction() {
+				mom =  "";
+				mom = Math.floor((Math.random() *3) + 1);
+				monsterFlee = Math.floor((Math.random() *10) +1);
+				console.log (mom);
+				console.log("Monster Speed " + monsterFlee);
+				console.log("user flee " + speed);
+				return mom;
+			}
+			var monsterTurn = mom;
+			//making a random move for the monster, and making a random monster flee stat.
+		// user input function
+//		function action() {
+//			console.log("ajklsfdalkdf");
+//			var turn = "";
+//			var turn = prompt("Its your turn buddy!").toLowerCase;
+//			return turn;
+//		}
+		// start of the main object, where most of the code belongs
+			console.log("smile");
+			main();
+			//I want to actually run the main function
+			function main () {
+			console.log("Hello");
+			var battling = true;
+			//battle loop
+			while (battling == true) {
+				action();
+				monsterAction(); 
+				if (dad == "attack") {
+					console.log("attack sucess");
+					if (mom == 1) {
+						document.write("The user used attack, but the monster defended, so no damage taken!");
+						
+					}
+					if (mom == 2) {
+						document.write("The user used attack, and the monster takes 5 damage!");
+					}
+				}
+				if (dad == "defend") {
+					if (mom == 3) {
+						document.write("The user defends, and the monster attacks. No damage is taken!");
+					}
+					if (mom == "defend") {
+						document.write("The user and monster defend, you both look stupid.");
+					}
+					if (mom == "flee") {
+						if (userFlee < monsterFlee) {
+							document.write("The monster flees and does so successfully!");
+							battling = false;
+						}
+						if (speed >= monsterFlee) {
+							document.write("The monster tries to flee, but it does so unsecesfully!");
+						}
+					}
+				}
+				if (dad == "flee") {
+					if (speed >= monsterFlee) {
+						document.write("The user sucessfully escpaes!");
+						battling = false;
+					}
+					else {
+						document.write("The user isn't fast enough to escape!");
+						if (mom == "attack") {
+							document.write("The user tries to flee, but isn't fast enought, and the monster attacks. -5 health");
+						}
+						if (mom == "defend") {
+							document.write("The user tries to flee, but isn't fast enough, the monster uses flee");
+						}
+						if (mom == "flee") {
+							document.write("The user tries to flee, but isn't fast enought, luckily the monster flees and escapes successfully. So uh good job?");
+							battling = false;
+						}
+					}
+				}
+				console.log("tree");
+//				while (continu == "") {
+//					continu = prompt("type any key to continue!");
+			}
+		}
